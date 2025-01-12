@@ -1,0 +1,41 @@
+context:
+  name: pyrootutils
+  version: 1.0.4
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyrootutils-${{ version }}.tar.gz
+  sha256: f58aac67147bbab20938b7b783cb2f4670d6329a33c6640233854976538fc5f2
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - python-dotenv >=0.20.0
+
+tests:
+  - python:
+      imports:
+        - pyrootutils
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Simple package for easy project root setup
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/ashleve/pyrootutils
+
+extra:
+  recipe-maintainers:
+    - hadim
