@@ -1,6 +1,6 @@
 context:
   name: pyrootutils
-  version: 1.0.7
+  version: 1.0.4
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyrootutils-${{ version }}.tar.gz
-  sha256: 7e2444cdbf4a73a907875fb109d55a38b4ee21313cef305bf59fadbf540440bc
+  sha256: f58aac67147bbab20938b7b783cb2f4670d6329a33c6640233854976538fc5f2
 
 build:
   number: 0
